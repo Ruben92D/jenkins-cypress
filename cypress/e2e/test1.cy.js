@@ -7,7 +7,7 @@ describe("template spec", () => {
     cy.visit("https://exampasdle.cypress.io");
   });
 
-  it.skip("passes", () => {
+  it.skip("Test skippeado", () => {
     cy.visit("https://example.cypress.io");
   });
 });
