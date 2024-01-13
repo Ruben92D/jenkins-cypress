@@ -11,30 +11,32 @@ pipeline {
                 bat 'npm ci'
             }
         }
-        parallel{
-            stage('Test Execution Chrome') {
-                steps {
-                    script {
-                        try {
-                            bat 'npx cypress run --e2e --browser chrome'
-                        } catch (Exception e) {
-                            currentBuild.result = "SUCCESS"
+        stage('Parallel excecution'){
+            parallel{
+                stage('Test Execution Chrome') {
+                    steps {
+                        script {
+                            try {
+                                bat 'npx cypress run --e2e --browser chrome'
+                            } catch (Exception e) {
+                                currentBuild.result = "SUCCESS"
+                            }
                         }
                     }
                 }
-            }
-            stage('Test Execution Firefox') {
-                steps {
-                    script {
-                        try {
-                            bat 'npx cypress run --e2e --browser firefox'
-                        } catch (Exception e) {
-                            currentBuild.result = "SUCCESS"
+                stage('Test Execution Firefox') {
+                    steps {
+                        script {
+                            try {
+                                bat 'npx cypress run --e2e --browser firefox'
+                            } catch (Exception e) {
+                                currentBuild.result = "SUCCESS"
+                            }
                         }
                     }
-                }
-            }       
-        }   
+                }       
+            }  
+        } 
         stage('Generate Log Report in the console') {
             steps {
                 bat 'node generateConsoleReport.js'
