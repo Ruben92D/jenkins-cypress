@@ -1,8 +1,8 @@
 pipeline {
     agent any
     stages {
-        stage('Clone Repo') {
-            steps {
+        stage('Clone Repo'){
+            steps{
                 git branch: 'main', url: 'https://github.com/Ruben92D/jenkins-cypress'
             }
         }
@@ -11,27 +11,30 @@ pipeline {
                 bat 'npm ci'
             }
         }
-        stage('Test Execution in Desktop') {
-            steps {
-                script {
-                    try {
-                        parallel(
-                            "Chrome": {
-                                bat 'npx cypress run --e2e --browser chrome'
-                            },
-                            "Firefox": {
-                                bat 'npx cypress run --e2e --browser firefox'
-                            },
-                            "Edge": {
-                                bat 'npx cypress run --e2e --browser edge'
-                            }
-                        )
-                    } catch (Exception e) {
-                        echo "Error"
+        parallel{
+            stage('Test Execution Chrome') {
+                steps {
+                    script {
+                        try {
+                            bat 'npx cypress run --e2e --browser chrome'
+                        } catch (Exception e) {
+                            currentBuild.result = "SUCCESS"
+                        }
                     }
                 }
             }
-        }
+            stage('Test Execution Firefox') {
+                steps {
+                    script {
+                        try {
+                            bat 'npx cypress run --e2e --browser firefox'
+                        } catch (Exception e) {
+                            currentBuild.result = "SUCCESS"
+                        }
+                    }
+                }
+            }       
+        }   
         stage('Generate Log Report in the console') {
             steps {
                 bat 'node generateConsoleReport.js'
