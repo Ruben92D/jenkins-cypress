@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run --e2e --browser chrome || ver>nul "
+    "test": "npx cypress run --e2e --browser chrome || ver>nul",
+    "testtags": "npx cypress run --e2e --browser chrome --env grepTags=@onlypass || ver>nul"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/Ruben92D/jenkins-cypress#readme",
   "dependencies": {
+    "@cypress/grep": "^4.0.1",
     "cypress": "^13.6.1",
     "mochawesome": "^7.1.3"
   }

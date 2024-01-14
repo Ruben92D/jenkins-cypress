@@ -1,9 +1,9 @@
-describe("template spec", () => {
-  it("Test que pasa", () => {
+describe("template spec", { tags: "@reggression" }, () => {
+  it("Test que pasa", { tags: "@onlypass" }, () => {
     cy.visit("https://example.cypress.io");
   });
 
-  it("Test que falla", () => {
+  it("Test que falla", { tags: "@onlyfails" }, () => {
     cy.visit("https://exampasdle.cypress.io");
   });
 
