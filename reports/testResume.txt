@@ -1,0 +1,4 @@
+SUITE 1 - template specTEST 0 - Test que pasaTEST 1 - Test que fallaTEST 2 - Test skippeadoTESTS TOTALES: 3 
+TESTS PASSADOS: 1 
+TESTS FALLADOS: 1 
+TESTS SKIPPEADOS: 1 

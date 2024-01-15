@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 2,
+    "failures": -1,
+    "start": "2024-01-14T19:05:56.294Z",
+    "end": "2024-01-14T19:05:59.747Z",
+    "duration": 3453,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 66.66666666666666,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5264f547-c354-41a8-b1d0-c9113dd62b59",
+      "title": "",
+      "fullFile": "cypress\\e2e\\test1.cy.js",
+      "file": "cypress\\e2e\\test1.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "939d67b3-3f1a-4b5a-942f-9ddfcdbe9f3c",
+          "title": "template spec",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test que pasa",
+              "fullTitle": "template spec Test que pasa",
+              "timedOut": null,
+              "duration": 734,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://example.cypress.io\");",
+              "err": {},
+              "uuid": "506c9fd2-198c-43f4-a19c-e3e6ae64087e",
+              "parentUUID": "939d67b3-3f1a-4b5a-942f-9ddfcdbe9f3c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test que falla",
+              "fullTitle": "template spec Test que falla",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit(\"https://exampasdle.cypress.io\");",
+              "err": {},
+              "uuid": "b5a36e74-b96f-4783-b93c-562d8e65d8b3",
+              "parentUUID": "939d67b3-3f1a-4b5a-942f-9ddfcdbe9f3c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test skippeado",
+              "fullTitle": "template spec Test skippeado",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit(\"https://example.cypress.io\");",
+              "err": {},
+              "uuid": "90084011-6ea9-4ac9-8218-358d12fc3e03",
+              "parentUUID": "939d67b3-3f1a-4b5a-942f-9ddfcdbe9f3c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "506c9fd2-198c-43f4-a19c-e3e6ae64087e"
+          ],
+          "failures": [],
+          "pending": [
+            "b5a36e74-b96f-4783-b93c-562d8e65d8b3",
+            "90084011-6ea9-4ac9-8218-358d12fc3e03"
+          ],
+          "skipped": [],
+          "duration": 734,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "reports",
+        "reportFileName": "report",
+        "json": true,
+        "html": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
