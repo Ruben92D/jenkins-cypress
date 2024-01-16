@@ -10,4 +10,11 @@ describe("template spec", { tags: "@reggression" }, () => {
   it.skip("Test skippeado", () => {
     cy.visit("https://example.cypress.io");
   });
+
+  it("Test de env", { tags: "@env" }, () => {
+    const user = Cypress.env("user_TEST");
+    const pass = Cypress.env("pass_TEST");
+    cy.log(user);
+    cy.log(pass);
+  });
 });
