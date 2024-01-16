@@ -15,7 +15,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        bat 'npx cypress run --e2e --browser chrome'
+                        bat 'set FORCE_COLOR=0 && npx cypress run --e2e --browser chrome'
                     } catch (Exception e) {
                         echo "Error"
                     }
