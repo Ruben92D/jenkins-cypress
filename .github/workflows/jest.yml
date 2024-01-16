@@ -17,7 +17,7 @@ jobs:
         run: npm ci
       - name: Run unit tests
         run: npx jest
-  
+
   prueba-linting-codeql:
     name: analice
     runs-on: ubuntu-latest
@@ -29,11 +29,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        lenguages: ['javascript']
+        lenguages: ["javascript"]
 
     steps:
       - name: Checkout
-      uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4.1.1
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
@@ -47,4 +47,3 @@ jobs:
         uses: github/codeql-action/analyze@v3
         with:
           category: "/language:${{matrix.language}}"
-
