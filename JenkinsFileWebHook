@@ -30,9 +30,6 @@ pipeline {
         stage('Send Webhook to GitHub Actions') {
             steps {
                 script {
-                    // Coloca la lógica para enviar el webhook aquí
-                    // Puedes usar herramientas como curl o wget
-                    // por ejemplo:
                     sh 'curl -X POST -d "{}" https://github.com/Ruben92D/jenkins-cypress.git'
                 }
             }
