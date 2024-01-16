@@ -1,0 +1,41 @@
+pipeline {
+    agent any
+    stages {
+        stage('Clone Repo'){
+            steps{
+                git branch: 'main', url: 'https://github.com/Ruben92D/jenkins-cypress'
+            }
+        }
+        stage('Dependencies') {
+            steps {
+                bat 'npm ci'
+            }
+        }
+        stage('Test Execution in Desktop') {
+            steps {
+                script {
+                    try {
+                        bat 'npx cypress run --e2e --browser chrome'
+                    } catch (Exception e) {
+                        echo "Error"
+                    }
+                }
+            }
+        }
+        stage('Generate Log Report in the console') {
+            steps {
+                bat 'node generateConsoleReport.js'
+            }
+        }
+        stage('Send Webhook to GitHub Actions') {
+            steps {
+                script {
+                    // Coloca la lógica para enviar el webhook aquí
+                    // Puedes usar herramientas como curl o wget
+                    // por ejemplo:
+                    sh 'curl -X POST -d "{}" https://github.com/Ruben92D/jenkins-cypress.git'
+                }
+            }
+        }
+    }
+}

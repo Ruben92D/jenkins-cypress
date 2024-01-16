@@ -1,0 +1,19 @@
+name: Despliegue después de Jenkins
+
+on:
+  workflow_run:
+    workflows: ["for-GithHub"]
+    types:
+      - completed
+
+jobs:
+  run-on-push-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Dependencies installing
+        run: npm ci
+      - name: Run tests
+        run: npx cypress run --e2e --browser chrome
