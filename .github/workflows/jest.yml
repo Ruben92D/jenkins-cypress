@@ -51,7 +51,7 @@ jobs:
   e2e:
     needs: [prueba-linting-codeql]
     runs-on: ubuntu-latest
-    env: Testing
+    environment: Testing
 
     steps:
       - name: "Secrets and variables"
