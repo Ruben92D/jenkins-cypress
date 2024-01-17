@@ -60,7 +60,6 @@ jobs:
         env:
           USER_VAR: ${{ vars.USER_TEST }}
           PASS_SECRET: ${{secrets.TEST_SECRET}}
-    steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
       - name: Dependencies installing
