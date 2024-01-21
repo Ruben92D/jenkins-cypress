@@ -1,16 +1,16 @@
 {
   "stats": {
     "suites": 1,
-    "tests": 2,
-    "passes": 1,
-    "pending": 2,
-    "failures": -1,
-    "start": "2024-01-14T19:05:56.294Z",
-    "end": "2024-01-14T19:05:59.747Z",
-    "duration": 3453,
-    "testsRegistered": 3,
-    "passPercent": 100,
-    "pendingPercent": 66.66666666666666,
+    "tests": 3,
+    "passes": 2,
+    "pending": 1,
+    "failures": 0,
+    "start": "2024-01-21T15:47:08.588Z",
+    "end": "2024-01-21T15:47:16.107Z",
+    "duration": 7519,
+    "testsRegistered": 4,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 25,
     "other": 1,
     "hasOther": true,
     "skipped": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "5264f547-c354-41a8-b1d0-c9113dd62b59",
+      "uuid": "c0168b45-a990-4d93-9f80-e6698ac911ca",
       "title": "",
       "fullFile": "cypress\\e2e\\test1.cy.js",
       "file": "cypress\\e2e\\test1.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "939d67b3-3f1a-4b5a-942f-9ddfcdbe9f3c",
+          "uuid": "0c54c8c3-5871-40ca-acc7-5bee7b5dc54d",
           "title": "template spec",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Test que pasa",
               "fullTitle": "template spec Test que pasa",
               "timedOut": null,
-              "duration": 734,
+              "duration": 1637,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.visit(\"https://example.cypress.io\");",
               "err": {},
-              "uuid": "506c9fd2-198c-43f4-a19c-e3e6ae64087e",
-              "parentUUID": "939d67b3-3f1a-4b5a-942f-9ddfcdbe9f3c",
+              "uuid": "50d2270f-e42a-4727-bddc-2c39b280c243",
+              "parentUUID": "0c54c8c3-5871-40ca-acc7-5bee7b5dc54d",
               "isHook": false,
               "skipped": false
             },
@@ -56,17 +56,21 @@
               "title": "Test que falla",
               "fullTitle": "template spec Test que falla",
               "timedOut": null,
-              "duration": 0,
-              "state": "pending",
+              "duration": 2475,
+              "state": "failed",
               "speed": null,
               "pass": false,
-              "fail": false,
-              "pending": true,
+              "fail": true,
+              "pending": false,
               "context": null,
               "code": "cy.visit(\"https://exampasdle.cypress.io\");",
-              "err": {},
-              "uuid": "b5a36e74-b96f-4783-b93c-562d8e65d8b3",
-              "parentUUID": "939d67b3-3f1a-4b5a-942f-9ddfcdbe9f3c",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://exampasdle.cypress.io/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: getaddrinfo ENOTFOUND exampasdle.cypress.io\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://exampasdle.cypress.io/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: getaddrinfo ENOTFOUND exampasdle.cypress.io\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n    at <unknown> (https://example.cypress.io/__cypress/runner/cypress_runner.js:131400:74)\n    at visitFailedByErr (https://example.cypress.io/__cypress/runner/cypress_runner.js:130792:12)\n    at <unknown> (https://example.cypress.io/__cypress/runner/cypress_runner.js:131399:11)\n    at tryCatcher (https://example.cypress.io/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://example.cypress.io/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://example.cypress.io/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://example.cypress.io/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://example.cypress.io/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (https://example.cypress.io/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://example.cypress.io/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://example.cypress.io/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://example.cypress.io/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://jenkins-proyect/./cypress/e2e/test1.cy.js:7:7)\n\nFrom Node.js Internals:\n  Error: getaddrinfo ENOTFOUND exampasdle.cypress.io\n      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:108:26)",
+                "diff": null
+              },
+              "uuid": "1c85b4a5-acda-4168-acaa-7117251edb40",
+              "parentUUID": "0c54c8c3-5871-40ca-acc7-5bee7b5dc54d",
               "isHook": false,
               "skipped": false
             },
@@ -83,23 +87,43 @@
               "context": null,
               "code": "cy.visit(\"https://example.cypress.io\");",
               "err": {},
-              "uuid": "90084011-6ea9-4ac9-8218-358d12fc3e03",
-              "parentUUID": "939d67b3-3f1a-4b5a-942f-9ddfcdbe9f3c",
+              "uuid": "f2ca7972-f811-4769-a929-b8707d67246b",
+              "parentUUID": "0c54c8c3-5871-40ca-acc7-5bee7b5dc54d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test de env",
+              "fullTitle": "template spec Test de env",
+              "timedOut": null,
+              "duration": 34,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const user = Cypress.env(\"user_TEST\");\nconst pass = Cypress.env(\"pass_TEST\");\ncy.log(user);\ncy.log(pass);",
+              "err": {},
+              "uuid": "3040cd26-a5af-4795-ad31-936289794b63",
+              "parentUUID": "0c54c8c3-5871-40ca-acc7-5bee7b5dc54d",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "506c9fd2-198c-43f4-a19c-e3e6ae64087e"
+            "50d2270f-e42a-4727-bddc-2c39b280c243",
+            "3040cd26-a5af-4795-ad31-936289794b63"
           ],
-          "failures": [],
+          "failures": [
+            "1c85b4a5-acda-4168-acaa-7117251edb40"
+          ],
           "pending": [
-            "b5a36e74-b96f-4783-b93c-562d8e65d8b3",
-            "90084011-6ea9-4ac9-8218-358d12fc3e03"
+            "f2ca7972-f811-4769-a929-b8707d67246b"
           ],
           "skipped": [],
-          "duration": 734,
+          "duration": 4146,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

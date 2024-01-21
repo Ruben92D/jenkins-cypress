@@ -13,11 +13,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
-        with:
-          record: true
-        env:
-          CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Dependencies installing
         run: npm ci
       - name: Run unit tests
@@ -65,8 +60,6 @@ jobs:
         env:
           USER_VAR: ${{ vars.USER_TEST }}
           PASS_SECRET: ${{secrets.TEST_SECRET}}
-          CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Checkout
         uses: actions/checkout@v4.1.1
       - name: Dependencies installing
